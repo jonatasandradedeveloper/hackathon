@@ -1,0 +1,26 @@
+version: "2"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: banco
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/data/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=loja
+      - MYSQL_DATABASE=loja
+    networks:
+      - my_net
+  adminer:
+    image: dockette/adminer:full
+    container_name: gerencia_banco
+    restart: always
+    ports:
+      - 8000:80
+    networks:
+      - my_net
+networks:
+  my_net:
+    driver: bridge
