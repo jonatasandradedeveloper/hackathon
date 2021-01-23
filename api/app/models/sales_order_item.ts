@@ -14,3 +14,5 @@ class SalesOrderItem{
         this.productValue = productValue
     }
 }
+
+export default SalesOrderItem

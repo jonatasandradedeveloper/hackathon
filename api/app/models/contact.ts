@@ -14,3 +14,5 @@ class Contact{
         this.email = email
     }
 }
+
+export default Contact

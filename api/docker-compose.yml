@@ -5,7 +5,7 @@ services:
     container_name: banco
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3307"
     volumes:
       - ./docker/data/db:/var/lib/mysql
     environment:
