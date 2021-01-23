@@ -16,9 +16,11 @@ routers.post('/categorie', categoriesRouter);
 routers.get('/clients', clientsRouter);
 routers.post('/client', clientsRouter);
 
-routers.get('/address', addressesRouter);
+routers.get('/addresses', addressesRouter);
+routers.post('/address', addressesRouter);
 
-routers.get('/contact', contactsRouter);
+routers.get('/contacts', contactsRouter);
+routers.post('/contact', contactsRouter);
 
 routers.get('/product', productsRouter);
 routers.get('/product/:id', productsRouter);
