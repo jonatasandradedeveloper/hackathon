@@ -1,12 +1,12 @@
 class Category {
     id? : number
     name : string
-    descriptio : string
+    description : string
 
     constructor(name : string, description : string, id? : number){
         this.id = id;
         this.name = name
-        this.descriptio = description
+        this.description = description
     }
 }
 

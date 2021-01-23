@@ -1,7 +1,7 @@
 class SalesOrder{
 
-    pk_order? : number
-    fk_customer : string
+    id? : number
+    id_client : string
     orderCode : string
     orderDate : Date
     status : string
@@ -9,10 +9,10 @@ class SalesOrder{
     addition? : number
     amount : number
 
-    constructor(fk_customer : string, orderCode : string, orderDate : Date, status : string,
-        amount : number, pk_order? : number, discount? : number, addition? : number){
-            this.pk_order = pk_order
-            this.fk_customer = fk_customer
+    constructor(id_client : string, orderCode : string, orderDate : Date, status : string,
+        amount : number, id? : number, discount? : number, addition? : number){
+            this.id = id
+            this.id_client = id_client
             this.orderCode = orderCode
             this.orderDate = orderDate
             this.status = status

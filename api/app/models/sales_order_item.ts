@@ -1,15 +1,15 @@
 class SalesOrderItem{
 
-    pk_orderItem? : number
-    fk_order : number
-    fk_product : number
+    id? : number
+    id_sale_order : number
+    id_product : number
     quantity : number
     productValue : number
 
-    constructor(fk_order : number, fk_product : number, quantity : number, productValue : number, pk_orderItem? : number){
-        this.pk_orderItem = pk_orderItem
-        this.fk_order = fk_order
-        this.fk_product = fk_product
+    constructor(id_sale_order : number, id_product : number, quantity : number, productValue : number, id? : number){
+        this.id = id
+        this.id_sale_order = id_sale_order
+        this.id_product = id_product
         this.quantity = quantity
         this.productValue = productValue
     }

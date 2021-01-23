@@ -1,7 +1,7 @@
 class Address {
     
-    pk_address? : number
-    fk_customer : number
+    id? : number
+    id_client : number
     address : string
     number : string
     neighborhood : string
@@ -10,11 +10,11 @@ class Address {
     uf : string
     typeAddress : string
 
-    constructor(fk_customer : number, address : string, number : string, neighborhood : string, city : string, 
-        complement : string, uf : string, typeAddress : string, pk_address? : number){
+    constructor(id_client : number, address : string, number : string, neighborhood : string, city : string, 
+        complement : string, uf : string, typeAddress : string, id? : number){
             
-            this.pk_address = pk_address
-            this.fk_customer = fk_customer
+            this.id = id
+            this.id_client = id_client
             this.address = address
             this.number = number
             this.neighborhood = neighborhood
