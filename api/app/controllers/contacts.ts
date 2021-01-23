@@ -1,10 +1,10 @@
-import Address from '../models/address';
+import Contact from '../models/contact';
 
-class Addresses{
+class Contacts{
 
-    public getAll(): Address[]{
+    public getAll(): Contact[]{
         return []
     }
 }
 
-export default Addresses
+export default Contacts

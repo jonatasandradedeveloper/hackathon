@@ -2,14 +2,31 @@ import {Router} from 'express';
  
 const routers = Router();
 
-import clientRouter from '../app/controllers/clients'
-import addressRouter from '../app/controllers/adresses'
+import clientsRouter from '../app/controllers/clients'
+import addressesRouter from '../app/controllers/addresses'
+import contactsRouter from '../app/controllers/contacts'
+import categoriesRouter from '../app/controllers/categories'
+import productsRouter from '../app/controllers/products'
+import salesItemsRouter from '../app/controllers/sales_orders_items'
+import salesOrdersRouter from '../app/controllers/sales_orders'
 
-routers.get('/', (req, res) => {
-  return req.json("Sucesso");
-});
+routers.get('/categories', categoriesRouter);
+routers.post('/categorie', categoriesRouter);
 
-routers.get('/clients', clientRouter);
-routers.get('/address', addressRouter);
+routers.get('/clients', clientsRouter);
+routers.post('/client', clientsRouter);
+
+routers.get('/address', addressesRouter);
+
+routers.get('/contact', contactsRouter);
+
+routers.get('/product', productsRouter);
+routers.get('/product/:id', productsRouter);
+routers.post('/product', productsRouter);
+
+routers.get('/sales_items', salesItemsRouter);
+
+routers.get('/sales_orders', salesOrdersRouter);
+
 
 export default routers;
