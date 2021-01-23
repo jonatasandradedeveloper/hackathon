@@ -1,16 +1,13 @@
-const app = require("express")()
-const cors = require('cors')
-const consign = require("consign")
-const bodyParser = require("body-parser")
+import express from 'express'
+const consign = require('consign')
 
-app.use(cors())
-app.use(bodyParser.json())
+const app = express()
+app.use(express.json())
 
 consign()
-    .then("start/routes.ts")
-    .into(app)
+.include('./config/db.ts')
+.then('./app/controllers/client.ts')
+.then('./config/routes.ts')
+.into(app)
 
-
-app.listen(3333, () => { 
-    console.log("Servidor rodando na porta 3333") 
-})
+app.listen(3000, () => console.log('Servidor Rodando!'))

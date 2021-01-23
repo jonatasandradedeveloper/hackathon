@@ -2,8 +2,8 @@ module.exports = {
   client: 'mysql',
   connection: {
     database: 'loja',
-    user: 'root',
-    password: 'loja'
+    user: 'develop',
+    password: 'password'
   },
   pool: {
     min: 2,

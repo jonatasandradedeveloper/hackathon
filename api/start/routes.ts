@@ -2,7 +2,7 @@ import {Router} from 'express';
  
 const routers = Router();
 
-import clientsRouter from '../app/controllers/clients'
+import clientsRouter from '../app/controllers/clients_old'
 import addressesRouter from '../app/controllers/addresses'
 import contactsRouter from '../app/controllers/contacts'
 import categoriesRouter from '../app/controllers/categories'
