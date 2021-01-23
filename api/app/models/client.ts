@@ -1,12 +1,12 @@
 class Client {
-    pk_customer? : number
+    id? : number
     firstName : string
     lastName : string
     genre : string
     birthDate : Date
 
-    constructor(firstName: string, lastName : string, genre : string, birthDate : Date, pkcustomer? : number){
-        this.pk_customer = pkcustomer
+    constructor(firstName: string, lastName : string, genre : string, birthDate : Date, id? : number){
+        this.id = id
         this.firstName = firstName
         this.lastName = lastName
         this.genre = genre,

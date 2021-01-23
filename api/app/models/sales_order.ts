@@ -22,3 +22,5 @@ class SalesOrder{
         }
 
 }
+
+export default SalesOrder
