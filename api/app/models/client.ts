@@ -1,4 +1,4 @@
-class Customer {
+class Client {
     pk_customer? : number
     firstName : string
     lastName : string
@@ -15,4 +15,4 @@ class Customer {
 
 }
 
-export default Customer
+export default Client
