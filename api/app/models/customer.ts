@@ -12,6 +12,7 @@ class Customer {
         this.genre = genre,
         this.birthDate = birthDate
     }
+
 }
 
 export default Customer
