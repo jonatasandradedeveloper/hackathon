@@ -1,8 +1,10 @@
-import Customer from '../models/client'
+import Client from '../models/client'
 
-class Customers{
+class Clients{
 
-    public getAll(): Customer[]{
+    public getAll(): Client[]{
         return []
     }
 }
+
+export default Clients
