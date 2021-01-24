@@ -7,6 +7,7 @@ consign()
 .include('./config/db')
 .then('./app/controllers/clients.ts')
 .then('./app/controllers/categories.ts')
+.then('./app/controllers/products.ts')
 .then('./config/routes.ts')
 .into(app)
 

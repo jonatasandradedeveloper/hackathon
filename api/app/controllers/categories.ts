@@ -19,7 +19,39 @@ module.exports ={
                 description
             })
             
-            return res.status(201).send()
+            return res.status(200).send()
+        }catch(err){
+            next(err)
+        }
+    },
+
+    async update(req : any, res : any, next: any) {
+        try{
+            const { name, description } = req.body
+            const { id } = req.params
+
+            await DB('categories')
+            .update({
+                name,
+                description
+            })
+            .where({ id })
+            
+            return res.status(200).send()
+        }catch(err){
+            next(err)
+        }
+    },
+
+    async delete(req : any, res : any, next: any) {
+        try{
+            const { id } = req.params
+
+            await DB('categories')
+            .where({ id })
+            .del()
+            
+            return res.status(200).send()
         }catch(err){
             next(err)
         }
