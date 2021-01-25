@@ -12,7 +12,7 @@ Abre outro terminal, navegue ate a pasta do projeto e rode os comandos
 [docke-compose start]
 
 Acesse o [localhost:8000]
-Servidor: "É o seu IPV4"
+Servidor: banco
 Usuário: root
 Senha: loja
 Base de dados: loja
