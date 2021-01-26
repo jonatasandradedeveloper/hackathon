@@ -1,10 +1,10 @@
-const DBC = require('../../config/db')
+const DBA = require('../../config/db')
 
 module.exports = {
     async index(req : any, res : any){
         try{
             const { id } = req.params
-            const result = await DBC.select('*').from('contacts').where({id})
+            const result = await DBA.select('*').from('adresses').where({id})
 
             return res.status(200).json(result)
 
@@ -16,7 +16,7 @@ module.exports = {
     async loadByClient(req : any, res : any){
         try{
             const { id } = req.params
-            const result = await DBC.select('*').from('contacts').where('id_client', id)
+            const result = await DBA.select('*').from('adresses').where('id_client', id)
 
             return res.status(200).json(result)
         }catch(err){
@@ -27,17 +27,21 @@ module.exports = {
     async create(req : any, res : any){
         try{
             const { id } = req.params
-            const client = await DBC.select('*').from('clients').where({id})
+            const client = await DBA.select('*').from('clients').where({id})
             
             if(client.length === 0){
                 return res.status(400).json({message : 'Cliente não localizado'})
             }else{
-                const { contactName, phone, email} = req.body
-                await DBA('contacts').insert({
+                const { address, number,  neighborhood, city, complement, uf, typeAddress} = req.body
+                await DBA('adresses').insert({
                     id_client: client[0].id,
-                    contactName,
-                    phone,
-                    email
+                    address,
+                    number,
+                    neighborhood,
+                    city,
+                    complement,
+                    uf,
+                    typeAddress
                 })
             }
 
@@ -51,15 +55,15 @@ module.exports = {
     async update(req : any, res : any){
         try{
             const { id } = req.params
-            const { contactName, phone, email} = req.body
-            const reg = await DBC.select('*').from('contacts').where({id})
+            const { address, number,  neighborhood, city, complement, uf, typeAddress} = req.body
+            const reg = await DBA.select('*').from('adresses').where({id})
             if(reg.length === 0){
-                return res.status(400).json({message : 'Contato não localizado'})
+                return res.status(400).json({message : 'Endereço não localizado'})
             }else{
-                await DBA('adresses').update({ contactName, phone, email }).where({id})
+                await DBA('adresses').update({address, number, neighborhood, city, complement, uf, typeAddress}).where({id})
                 
             }
-            
+
             return res.status(204).send()
 
         }catch(err){
@@ -70,11 +74,11 @@ module.exports = {
     async remove(req : any, res : any){
         try{
             const { id } = req.params
-            const reg = await DBC.select('*').from('contacts').where({id})
+            const reg = await DBA.select('*').from('adresses').where({id})
             if(reg.length === 0){
-                return res.status(400).json({message : 'Contato não localizado'})
+                return res.status(400).json({message : 'Endereço não localizado'})
             }else{
-                await DBA('contacts').where({id}).del()
+                await DBA('adresses').where({id}).del()
             }
             
             return res.status(204).send()
